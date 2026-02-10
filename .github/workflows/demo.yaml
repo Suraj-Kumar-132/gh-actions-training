@@ -1,1 +1,49 @@
+name: Demo
 
+on:
+  workflow_dispatch: 
+    inputs:
+      areYouFeelingGood:
+        description: "Are you feeling good? "
+        type: boolean
+        default: false
+
+jobs:
+  Job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step1:Say Hello Guys! Chai Pi lo
+        run: echo "We are learning Github Actions"
+
+  Job2:
+    runs-on: ubuntu-latest
+    needs: [Job1]
+    steps:
+      - name: Step2:Thik hai Chai Pila do
+        run: echo "This is step2 with Need of Job1"
+
+      - name: Step3:Or batao kya chal rha hai 
+        if: ${{ inputs.areYouFeelingGood }}
+        run: echo "I am doing good"
+      - name: step4
+        if: ${{ inputs.areYouFeelingGood }}
+        run: echo "Please take Sick Leave"
+
+  Job3:
+    runs-on: ubuntu-latest
+    needs: [Job2]
+    steps:
+      - name: Step4:Office aane ka kya scene hai
+        if: ${{ inputs.areYouFeelingGood }}
+        run: echo "Office aane wale hai!!"
+      - name: step4
+        if: ${{ inputs.areYouFeelingGood }}
+        run: echo "Mail Dal dete hai"
+        
+      
+      
+      
+    
+      
+    
+      
