@@ -1,6 +1,7 @@
 name: Demo
 
 on:
+# manual event
   workflow_dispatch: 
     inputs:
       areYouFeelingGood:
@@ -25,6 +26,9 @@ jobs:
       - name: Step3:Or batao kya chal rha hai 
         if: ${{ inputs.areYouFeelingGood }}
         run: echo "I am doing good"
+      - name: Step3:Or batao kya chal rha hai 
+        if: ${{ !inputs.areYouFeelingGood }}
+        run: echo "I am not doing well!! but thanks for asking"
       - name: step4
         if: ${{ !inputs.areYouFeelingGood }}
         run: echo "Please take Sick Leave"
@@ -37,7 +41,7 @@ jobs:
         if: ${{ inputs.areYouFeelingGood }}
         run: echo "Office aane wale hai!!"
       - name: step4
-        if: ${{ inputs.areYouFeelingGood }}
+        if: ${{ !inputs.areYouFeelingGood }}
         run: echo "Mail Dal dete hai"
         
       
