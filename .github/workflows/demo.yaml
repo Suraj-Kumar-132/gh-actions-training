@@ -35,7 +35,7 @@ jobs:
   Job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Step1:${{ env.MY_GREETING }} ${{ env.MY_NAME }} Chai Pi lo
+      - name: Step1:${{ env.MY_GREETING }} ${{ env.MY_NAME }} Chai Pi  !!
         run: echo "$MY_NAME is learning Github Actions"
 
   Job2:
