@@ -40,9 +40,11 @@ jobs:
       - name: Step3:Or batao kya chal rha hai 
         if: ${{ inputs.areYouFeelingGood }}
         run: echo "I am doing good"
+        
       - name: Step3:Or batao kya chal rha hai 
         if: ${{ !inputs.areYouFeelingGood }}
         run: echo "I am not doing well!! but thanks for asking"
+        
       - name: step4
         if: ${{ !inputs.areYouFeelingGood }}
         run: echo "Please take Sick Leave"
@@ -54,7 +56,8 @@ jobs:
       - name: Step4:Office aane ka kya scene hai
         if: ${{ inputs.areYouFeelingGood }}
         run: echo "Office aane wale hai!!"
-      - name: step4
+        
+      - name: Step4:Office aane ka kya scene hai
         if: ${{ !inputs.areYouFeelingGood }}
         run: echo "Mail Dal dete hai"
         
