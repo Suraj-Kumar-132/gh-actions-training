@@ -22,7 +22,10 @@ on:
         description: "Are you feeling good? "
         type: boolean
         default: false
-
+  issues:
+    types:
+      - opened
+      - closed
 jobs:
   Job1:
     runs-on: ubuntu-latest
