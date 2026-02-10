@@ -21,17 +21,22 @@ on:
       areYouFeelingGood:
         description: "Are you feeling good? "
         type: boolean
-        default: false
+        default: true
   issues:
     types:
       - opened
       - closed
+
+## ENVIRONMENT##
+env:
+  MY_GREETING : HELLO
+  MY_NAME : SURAJ
 jobs:
   Job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Step1:Say Hello Guys! Chai Pi lo
-        run: echo "We are learning Github Actions"
+      - name: Step1:${{ env.MY_GREETING }} ${{ env.MY_NAME }} Chai Pi lo
+        run: echo "$MY_NAME is learning Github Actions"
 
   Job2:
     runs-on: ubuntu-latest
