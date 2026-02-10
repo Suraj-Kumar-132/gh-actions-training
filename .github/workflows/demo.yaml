@@ -40,9 +40,11 @@ jobs:
 
   Job2:
     runs-on: ubuntu-latest
+    env:
+      MY_NAME: Suraj Bhai
     needs: [Job1]
     steps:
-      - name: Step2:Thik hai Chai Pila do
+      - name: Step2:Thik hai ${{ env.MY_NAME }} Chai Pila do
         run: echo "This is step2 with Need of Job1"
 
       - name: Step3:Or batao kya chal rha hai 
