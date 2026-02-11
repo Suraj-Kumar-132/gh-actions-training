@@ -28,6 +28,3 @@ jobs:
         run: |
           echo "Welcome, ${{ inputs.user_name }}"
           echo "${{ vars.MY_NAME }} hu main "
-          
-            
-  
