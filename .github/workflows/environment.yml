@@ -1,14 +1,14 @@
 name: Environment Variable
 
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
     inputs:
-      target_env: 
+      target_env:
         description: "Choose Environment "
         type: choice
         options: [staging, production]
         default: staging
-  
+
       user_name:
         description: " Kon Ho Tum ?"
         type: string
