@@ -11,12 +11,12 @@ on:
     branches:
       - main
 
-  # schedule event
+# schedule event
   schedule:
     - cron: 0 12 * * *
-    - cron: 0 9 * * 0 
+    - cron: 0 9 * * 0
 # manual event
-  workflow_dispatch: 
+  workflow_dispatch:
     inputs:
       areYouFeelingGood:
         description: "Are you feeling good? "
@@ -29,8 +29,8 @@ on:
 
 ## ENVIRONMENT##
 env:
-  MY_GREETING : HELLO
-  MY_NAME : SURAJ
+  MY_GREETING: HELLO
+  MY_NAME: SURAJ
 jobs:
   Job1:
     runs-on: ubuntu-latest
@@ -52,14 +52,14 @@ jobs:
       - name: Step2:Thik hai ${{ env.MY_NAME }} Chai Pila do
         run: echo "This is step2 with Need of Job1"
 
-      - name: Step3:Or batao kya chal rha hai 
+      - name: Step3:Or batao kya chal rha hai
         if: ${{ inputs.areYouFeelingGood }}
         run: echo "I am doing good"
-        
-      - name: Step3:Or batao kya chal rha hai 
+
+      - name: Step3:Or batao kya chal rha hai
         if: ${{ !inputs.areYouFeelingGood }}
         run: echo "I am not doing well!! but thanks for asking"
-        
+
       - name: step4
         if: ${{ !inputs.areYouFeelingGood }}
         run: echo "Please take Sick Leave"
@@ -71,15 +71,7 @@ jobs:
       - name: Step4:Office aane ka kya scene hai
         if: ${{ inputs.areYouFeelingGood }}
         run: echo "Office aane wale hai!!"
-        
+
       - name: Step4:Office aane ka kya scene hai
         if: ${{ !inputs.areYouFeelingGood }}
         run: echo "Mail Dal dete hai"
-        
-      
-      
-      
-    
-      
-    
-      
