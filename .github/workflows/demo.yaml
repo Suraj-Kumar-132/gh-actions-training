@@ -29,8 +29,8 @@ on:
 
 ## ENVIRONMENT##
 env:
-  MY_GREETING : HELLO
-  MY_NAME : SURAJ
+  MY_GREETING: HELLO
+  MY_NAME: SURAJ
 jobs:
   Job1:
     runs-on: ubuntu-latest
