@@ -1,0 +1,30 @@
+name: Environment Variable
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_env:
+        description: "Choose Environment "
+        type: choice
+        options: [staging, production]
+        default: staging
+
+      user_name:
+        description: " Kon Ho Tum ?"
+        type: string
+        required: true
+        default: "Guest"
+
+jobs:
+  Greet:
+    runs-on: macos-latest
+    environment: ${{ inputs.target_env }}
+    steps:
+      - name: Show Selected Enviorments
+        run: |
+          echo "Selected environment:  ${{ inputs.target_env }}"
+
+      - name: Display environment variable value
+        run: |
+          echo "Welcome, ${{ inputs.user_name }}"
+          echo "${{ vars.MY_NAME }} hu main "
