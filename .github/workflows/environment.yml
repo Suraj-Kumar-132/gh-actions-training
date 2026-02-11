@@ -20,7 +20,7 @@ jobs:
     runs-on: macos-latest
     environment: ${{ inputs.target_env }}
     steps:
-      - name: Show Selected Enviorment
+      - name: Show Selected Enviorments
         run: |
           echo "Selected environment:  ${{ inputs.target_env }}"
 
